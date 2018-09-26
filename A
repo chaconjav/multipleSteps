@@ -3,35 +3,35 @@ pipeline {
 	stages {
 		stage('build') {
 			steps {
-				sh 'echo "Fallo"'
+				sh 'echo "Stage build----->Fallo"'
 				sh ''' echo "Mensaje multilinea--primera linea"
 					echo "MEnsaje multilinea-segunda linea"'''
 			}
 		}
 		stage('test') {
 			steps {
-				sh 'echo "Fail....!!"; exit 1'
+				sh 'echo "Stage--->Test---Fail....!!"; exit 1'
 			}
 		}
 	}
 	
 	post {
 		always {
-			echo 'This will always run'
+			echo 'Always---->This will always run'
 		}
 		success{
-			echo 'This will only run if successful'
+			echo 'Success--->This will only run if successful'
 		}
 		failure{
-			echo 'This will only run if failure'
+			echo 'Failure--->This will only run if failure'
 		}
 		unstable{
-			echo 'This will only run if marked as unstable'
-			echo ' ie. some tests failing'
+			echo 'Unstable-->This will only run if marked as unstable'
+			echo 'Ustable--->ie. some tests failing'
 		}
 		changed{
-			echo 'This will only run if the state fo the Pipeline has changed'
-			echo ' for example if the pipeline was previously failing but now is successful'
+			echo 'Changed-->This will only run if the state fo the Pipeline has changed'
+			echo 'Changed-->for example if the pipeline was previously failing but now is successful'
 		}
 	}
 }
