@@ -10,7 +10,7 @@ pipeline {
 		}
 		stage('test') {
 			steps {
-				sh 'echo "Stage--->Test---Fail....!!"; exit 1'
+				sh 'echo "Stage--->Test---Fail....!!"' //; exit 1'
 			}
 		}
 	}
