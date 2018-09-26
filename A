@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('build') {
 			steps {
-				sh 'echo "Falló"'
+				sh 'echo "Fallo"'
 				sh ''' echo "Mensaje multilinea--primera linea"
 					echo "MEnsaje multilinea-segunda linea"'''
 			}
